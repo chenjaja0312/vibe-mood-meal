@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Mood Meal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="hero">
+            <p class="tag">Java + SQLite + Frontend + ML</p>
+            <h1>Vibe Mood Meal</h1>
+            <p class="subtitle">you can do it.</p>
+        </section>
+
+        <section class="grid">
+            <form id="moodForm" class="card form-card">
+                <h2>Tell me your status</h2>
+
+                <label for="mood">Mood</label>
+                <select id="mood" required>
+                    <option value="Happy">Happy</option>
+                    <option value="Calm">Calm</option>
+                    <option value="Tired">Tired</option>
+                    <option value="Anxious">Anxious</option>
+                    <option value="Sad">Sad</option>
+                    <option value="exciting">Exciting</option>
+                </select>
+
+                <label for="stressLevel">Stress level: <span id="stressValue">5</span>/10</label>
+                <input id="stressLevel" type="range" min="1" max="10" value="5">
+
+                <label for="availableTime">Available time</label>
+                <select id="availableTime" required>
+                    <option value="10 minutes">10 minutes</option>
+                    <option value="30 minutes">30 minutes</option>
+                    <option value="1 hour">1 hour</option>
+                </select>
+
+                <label for="note">Note</label>
+                <textarea id="note" rows="4" placeholder="Example: I am tired because I have an exam tomorrow."></textarea>
+
+                <button type="submit">Get recommendation</button>
+                <button type="button" id="clearBtn" class="secondary">Clear demo records</button>
+            </form>
+
+            <section class="card result-card">
+                <h2>Latest recommendation</h2>
+                <div id="result" class="empty">Submit your mood data first.</div>
+            </section>
+        </section>
+
+        <section class="card history-card">
+            <div class="history-header">
+                <h2>History from SQLite Database</h2>
+                <span id="count">0 records</span>
+            </div>
+            <div id="history" class="history-list"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
